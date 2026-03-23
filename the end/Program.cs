@@ -1,5 +1,5 @@
 ﻿
-
+// note: if you cannot do the thing you need with the variables you have try a new variable instead.
 // cyberpunk rouglike intro
 Console.WriteLine("The end is nigh");
 Console.WriteLine("Hi player you are here to kill the bad guys ");
@@ -22,25 +22,37 @@ answerCorrecter(3, ["toy t-rex", "cyborg 1", "penutbutter"]);
 static void answerCorrecter(int setAmoutOfAnswers, string[] textOnTheBord) //komplex algortihm
 {
   string playerAnswer = ""; // extract to see which charachter is picked
-  playerAnswer = Console.ReadLine();
 
-  for (int i = 0; i < setAmoutOfAnswers - 1; i++)
+  while (true)
   {
-
-    while (playerAnswer != textOnTheBord[i])
+    bool correct = false ;
+    playerAnswer = Console.ReadLine();
+    for (int i = 0; i < setAmoutOfAnswers ; i++)
     {
-     
-      
-      if (playerAnswer != textOnTheBord[setAmoutOfAnswers-1])
+
+      if (playerAnswer != textOnTheBord[i])
       {
+        
         Console.WriteLine("pick a character");
       }
-      
+      else
+      {
+        correct= true;
+        Console.WriteLine("you did it");
+        
+      }
 
+    } 
+
+    if(correct == true)
+    {
+      break;
     }
 
-  }
 
+
+  }
+    
 
 }
 
