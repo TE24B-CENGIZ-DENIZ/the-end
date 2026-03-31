@@ -1,4 +1,5 @@
 ﻿
+// last part make a loop for fighting in the end do a random powerup decided by a dice  
 // note: if you cannot do the thing you need with the variables you have try a new variable instead.
 // cyberpunk rouglike intro
 Console.WriteLine("The end is nigh");
@@ -15,7 +16,7 @@ Console.WriteLine(character[2]);
 
 AnswerCorrecter(3, ["toy t-rex", "cyborg 1", "penutbutter"]);
 Dificulties();
-
+Fighter(1, 2); // place holder 
 
 // // // dificulties complex alg
 // // // -------------------------------------------------------methods-------------------------------------------------------------
@@ -122,12 +123,46 @@ static (int, int, int, int) Dificulties() // ++ hp and dmg for enemy
 
 }
 
+static void Fighter(int HeroHp, int EnemyHp) //  nvm you get the insert valiue via transformation of the return valiues 
+{
+  // end of every loop return the hp of enemys and hero 
+  Console.WriteLine("you now get to fight ");
+  Console.WriteLine("how many times would you like to attack? pick from 1 to 3 ");
+  while (EnemyHp >= 0 || HeroHp >= 0) // can be && instead
+  {
+    int AmountOfAttacks;
+    string PlayerAnswer = AnswerCorrecter(3, ["1", "2", "3"]);
+    Console.WriteLine($"you attack {PlayerAnswer} amount of times");
+    int.TryParse(PlayerAnswer, out AmountOfAttacks); //do not need a bool bc answr cortctr allready checks 
+     // amount of attacks * dmg = enemy hp - new dmg = new enemy hp 
+    Console.WriteLine("it does {} damage");
+    Console.WriteLine($"enemy has now {EnemyHp} hp");
 
 
-//need type converting (stamina option), random chance,pseudo code,if and else, return valiue, do not need complex algorittms for the entire code
+    Console.WriteLine("the enemy attacks");
+    //hero hp- enemy dmg  = new hero hp
+    Console.WriteLine("it does {} damage");
+    Console.WriteLine($"you have now {HeroHp} hp");
 
 
-//story
+
+
+  }
+
+  if (HeroHp <= 0)
+  {
+    Console.WriteLine(" you lose");
+  }
+  else if (EnemyHp <= 0)
+  {
+    Console.WriteLine("you win");
+  }
+}
+
+//need type converting , pseudo code  
+
+
+
 
 
 
