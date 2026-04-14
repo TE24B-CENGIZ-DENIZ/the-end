@@ -16,12 +16,12 @@ Console.WriteLine($"3: {character[2]}");
 Console.WriteLine("pick the number of the character that you want");
 
 AnswerCorrecter(3, ["1", "2", "3"]);
-// int HeroHp = 0;
-// int HeroDamage = 0;
-// int EnemyHp = 0;
-// int Enemydamage = 0;
-// (HeroHp, HeroDamage, Enemydamage, EnemyHp) = Dificulties();
-// Fighter(HeroHp, HeroDamage, Enemydamage, EnemyHp);
+int HeroHp = 0;
+int HeroDamage = 0;
+int EnemyHp = 0;
+int Enemydamage = 0;
+(HeroHp, HeroDamage, Enemydamage, EnemyHp) = Dificulties();
+Fighter(HeroHp, HeroDamage, Enemydamage, EnemyHp);
 
 
 // // // -------------------------------------------------------methods-------------------------------------------------------------
