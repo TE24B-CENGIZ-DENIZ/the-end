@@ -1,7 +1,6 @@
 ﻿
-// last part make a loop for fighting in the end do a random powerup decided by a dice  
-// note: if you cannot do the thing you need with the variables you have try a new variable instead.
 // cyberpunk turn based fighting system 
+//comment all uniqe code 
 Console.WriteLine("The end is nigh");
 Console.WriteLine("Hi player you are here to kill the bad guys ");
 Console.WriteLine(" chose a character and kill them if you can");
@@ -29,7 +28,7 @@ Fighter(HeroHp, HeroDamage, Enemydamage, EnemyHp);
 
 static string AnswerCorrecter(int SetAmoutOfAnswers, string[] TextOnTheBord) //komplex algortihm
 {
-  string PlayerAnswer = ""; // extract to see which charachter is picked
+  string PlayerAnswer = ""; // extract to see which character is picked
 
   while (true)
   {
@@ -149,6 +148,12 @@ static void Fighter(int HeroHp, int HeroDamage, int Enemydamage, int EnemyHp) //
     Console.WriteLine($"it does {AmountOfAttacks * HeroDamage} damage");
     Console.WriteLine($"enemy has now {EnemyHp} hp");
 
+    if (EnemyHp <= 0)
+    {
+      Console.WriteLine("you win");
+      break;
+    }
+
 
     Console.WriteLine("the enemy attacks");
     HeroHp = HeroHp - Enemydamage; //hero hp- enemy dmg  = new hero hp
@@ -160,11 +165,7 @@ static void Fighter(int HeroHp, int HeroDamage, int Enemydamage, int EnemyHp) //
       Console.WriteLine(" you lose");
       break;
     }
-    else if (EnemyHp <= 0)
-    {
-      Console.WriteLine("you win");
-      break;
-    }
+    
 
   }
 
@@ -173,6 +174,7 @@ static void Fighter(int HeroHp, int HeroDamage, int Enemydamage, int EnemyHp) //
 
 //need pseudo code 
 // current agenda QOL
+
 
 
 
