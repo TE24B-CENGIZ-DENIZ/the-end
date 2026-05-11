@@ -1,6 +1,9 @@
 ﻿
 // cyberpunk turn based fighting system 
 //comment all uniqe code 
+// make different characters mean something
+// powerups
+// divide up fighter more???
 Console.WriteLine("The end is nigh");
 Console.WriteLine("Hi player you are here to kill the bad guys ");
 Console.WriteLine(" chose a character and kill them if you can");
@@ -172,8 +175,7 @@ static void Fighter(int HeroHp, int HeroDamage, int Enemydamage, int EnemyHp) //
 
 }
 
-//need pseudo code 
-// current agenda QOL
+
 
 
 
