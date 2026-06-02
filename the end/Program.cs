@@ -65,7 +65,7 @@ static string AnswerCorrecter(int SetAmoutOfAnswers, string[] TextOnTheBord)
 
 
 
-static (int, int, int, int) Dificulties() // ++ hp and dmg for enemy
+static (int, int, int, int) Dificulties() 
 {
   int HeroHp = 0;
   int HeroDamage = 0;
