@@ -57,7 +57,7 @@ static string AnswerCorrecter(int SetAmoutOfAnswers, string[] TextOnTheBord) //k
     }
     else
     {
-      Console.WriteLine("pick one of the options"); 
+      Console.WriteLine("pick one of the options");
 
     }
 
@@ -168,7 +168,7 @@ static void Fighter(int HeroHp, int HeroDamage, int Enemydamage, int EnemyHp) //
       Console.WriteLine(" you lose");
       break;
     }
-    
+
 
   }
 
