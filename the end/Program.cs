@@ -32,7 +32,7 @@ static string AnswerCorrecter(int SetAmoutOfAnswers, string[] TextOnTheBord)
   {
     bool AnswerdCorrect = false;
     PlayerAnswer = Console.ReadLine();
-    for (int i = 0; i < SetAmoutOfAnswers; i++) // loops and chacks every single number in the list to see if the content matches (abt the entire for loop)
+    for (int i = 0; i < SetAmoutOfAnswers; i++) // loops and chacks every single number in the list 
     {
 
       if (PlayerAnswer == TextOnTheBord[i])
