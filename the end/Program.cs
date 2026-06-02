@@ -4,7 +4,7 @@ Console.WriteLine("Hi player you are here to kill the bad guys ");
 Console.WriteLine(" chose a character and kill them if you can");
 
 
-string[] character = ["toy t-rex", "cyborg 1", "penutbutter"];
+string[] character = ["toy t-rex", "cyborg 1", "penutbutter"]; //list of characters you can choose 
 
 Console.WriteLine(" your characters are ");
 Console.WriteLine($"1: {character[0]}");
@@ -32,7 +32,7 @@ static string AnswerCorrecter(int SetAmoutOfAnswers, string[] TextOnTheBord)
   {
     bool AnswerdCorrect = false;
     PlayerAnswer = Console.ReadLine();
-    for (int i = 0; i < SetAmoutOfAnswers; i++)
+    for (int i = 0; i < SetAmoutOfAnswers; i++) // loops and chacks every single number in the list to see if the content matches (abt the entire for loop)
     {
 
       if (PlayerAnswer == TextOnTheBord[i])
@@ -94,8 +94,8 @@ static (int, int, int, int) Dificulties()
   {
     Console.WriteLine($"you have picked {NewPlayerAnswer} dificulty ");
     HeroHp = 9;
-    HeroDamage = Random.Shared.Next(1, 6);
-    EnemyDamage = Random.Shared.Next(2, 5);
+    HeroDamage = Random.Shared.Next(1, 6); //random hero damage
+    EnemyDamage = Random.Shared.Next(2, 5); //random enemy damage
     EnemyHp = 7;
   }
   else if (NewPlayerAnswer == "eliv")
@@ -107,7 +107,7 @@ static (int, int, int, int) Dificulties()
     EnemyHp = 10;
   }
 
-  return (HeroHp, HeroDamage, EnemyDamage, EnemyHp);
+  return (HeroHp, HeroDamage, EnemyDamage, EnemyHp); // returned variables
 
 
 }
