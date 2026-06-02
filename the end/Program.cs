@@ -1,9 +1,4 @@
 ﻿
-// cyberpunk turn based fighting system 
-//comment all uniqe code 
-// make different characters mean something
-// powerups
-// divide up fighter more???
 Console.WriteLine("The end is nigh");
 Console.WriteLine("Hi player you are here to kill the bad guys ");
 Console.WriteLine(" chose a character and kill them if you can");
@@ -29,9 +24,9 @@ Fighter(HeroHp, HeroDamage, Enemydamage, EnemyHp);
 // // // -------------------------------------------------------methods-------------------------------------------------------------
 
 
-static string AnswerCorrecter(int SetAmoutOfAnswers, string[] TextOnTheBord) //komplex algortihm
+static string AnswerCorrecter(int SetAmoutOfAnswers, string[] TextOnTheBord) 
 {
-  string PlayerAnswer = ""; // extract to see which character is picked
+  string PlayerAnswer = ""; 
 
   while (true)
   {
@@ -68,29 +63,14 @@ static string AnswerCorrecter(int SetAmoutOfAnswers, string[] TextOnTheBord) //k
 
 
 
-// //the other way for  answercorrecttor
-// // string[] answerlist= ["hi", "hello"];
-// // Console.WriteLine(answerlist[0] );
-// // Console.WriteLine(answerlist[1]);
 
-// // string playerAnswer= "";
-
-// // while (playerAnswer != "hi" && playerAnswer != "hello" )
-// // {
-// //     playerAnswer= Console.ReadLine();
-
-// //     if (playerAnswer != "hi" && playerAnswer != "hello")
-// //     {
-// //         Console.WriteLine("wrong pick another character");
-// //     }
-// // }
 
 static (int, int, int, int) Dificulties() // ++ hp and dmg for enemy
 {
   int HeroHp = 0;
   int HeroDamage = 0;
   int EnemyHp = 0;
-  int Enemydamage = 0;
+  int EnemyDamage = 0;
 
   string[] DificultyList = ["easy baby mode", "normale", "eliv"];
 
@@ -99,23 +79,23 @@ static (int, int, int, int) Dificulties() // ++ hp and dmg for enemy
   Console.WriteLine($"*------{DificultyList[1]}-----*");
   Console.WriteLine($"*------{DificultyList[2]}-----*");
 
-  string NewPlayerAnswer = AnswerCorrecter(3, ["easy baby mode", "normale", "eliv"]); //rtrn val
+  string NewPlayerAnswer = AnswerCorrecter(3, ["easy baby mode", "normale", "eliv"]); 
 
   if (NewPlayerAnswer == "easy baby mode")
   {
     Console.WriteLine($"you have picked {NewPlayerAnswer} dificulty ");
     HeroHp = 10;
     HeroDamage = Random.Shared.Next(2, 6);
-    Enemydamage = Random.Shared.Next(1, 4);
+    EnemyDamage = Random.Shared.Next(1, 4);
     EnemyHp = 5;
 
   }
-  else if (NewPlayerAnswer == "normale") // += where?
+  else if (NewPlayerAnswer == "normale") 
   {
     Console.WriteLine($"you have picked {NewPlayerAnswer} dificulty ");
     HeroHp = 9;
     HeroDamage = Random.Shared.Next(1, 6);
-    Enemydamage = Random.Shared.Next(2, 5);
+    EnemyDamage = Random.Shared.Next(2, 5);
     EnemyHp = 7;
   }
   else if (NewPlayerAnswer == "eliv")
@@ -123,32 +103,32 @@ static (int, int, int, int) Dificulties() // ++ hp and dmg for enemy
     Console.WriteLine($"you have picked {NewPlayerAnswer} dificulty ");
     HeroHp = 7;
     HeroDamage = Random.Shared.Next(1, 6);
-    Enemydamage = Random.Shared.Next(4, 9);
+    EnemyDamage = Random.Shared.Next(4, 9);
     EnemyHp = 10;
   }
 
-  return (HeroHp, HeroDamage, Enemydamage, EnemyHp);
+  return (HeroHp, HeroDamage, EnemyDamage, EnemyHp);
 
 
 }
 
-static void Fighter(int HeroHp, int HeroDamage, int Enemydamage, int EnemyHp) //  nvm you get the insert valiue via transformation of the return valiues 
+static void Fighter(int HeroHp, int HeroDamage, int EnemyDamage, int EnemyHp) 
 {
-  // end of every loop return the hp of enemys and hero 
+  
   Console.WriteLine("you now get to fight ");
 
-  while (EnemyHp > 0 || HeroHp > 0) // can be && instead
+  while (EnemyHp > 0 || HeroHp > 0) 
   {
     Console.WriteLine("how many times would you like to attack? pick from 1 to 3 ");
 
-    int AmountOfAttacks;
+    int AmountofAttacks;
     string PlayerAnswer = AnswerCorrecter(3, ["1", "2", "3"]);
     Console.WriteLine($"you attack {PlayerAnswer} amount of times");
-    int.TryParse(PlayerAnswer, out AmountOfAttacks); //do not need a bool bc answr correcter allready checks 
+    int.TryParse(PlayerAnswer, out AmountofAttacks);  
 
-    EnemyHp = EnemyHp - AmountOfAttacks * HeroDamage; //= new enemy hp 
+    EnemyHp = EnemyHp - AmountofAttacks * HeroDamage; 
 
-    Console.WriteLine($"it does {AmountOfAttacks * HeroDamage} damage");
+    Console.WriteLine($"it does {AmountofAttacks * HeroDamage} damage");
     Console.WriteLine($"enemy has now {EnemyHp} hp");
 
     if (EnemyHp <= 0)
@@ -159,8 +139,8 @@ static void Fighter(int HeroHp, int HeroDamage, int Enemydamage, int EnemyHp) //
 
 
     Console.WriteLine("the enemy attacks");
-    HeroHp = HeroHp - Enemydamage; //hero hp- enemy dmg  = new hero hp
-    Console.WriteLine($"it does {Enemydamage} damage");
+    HeroHp = HeroHp - EnemyDamage; 
+    Console.WriteLine($"it does {EnemyDamage} damage");
     Console.WriteLine($"you have now {HeroHp} hp");
 
     if (HeroHp <= 0)
